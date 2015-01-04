@@ -1,0 +1,31 @@
+@(contacts: List[Contact])
+
+@if(!contacts.isEmpty){
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            @for(c <- contacts) {
+                <tr>
+                    <td>@c.getName</td>
+                    <td>@c.getEmailAddress</td>
+                    <td>
+                        <a href="@routes.Contacts.edit(c.getId)">Edit</a>
+                    </td>
+                    <td>
+                        @helper.form(action = routes.Contacts.delete(c.getId)){
+                            <button type="submit">Delete</button>
+                        }
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+}else{
+    <p>Contact not found.</p>
+}
