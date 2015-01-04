@@ -2,6 +2,7 @@ import models.Contact;
 import play.Application;
 import play.GlobalSettings;
 
+
 /**
  * Created by anderson on 04/01/15.
  */
@@ -14,4 +15,7 @@ public class Global extends GlobalSettings {
         firstContact.setEmailAddress("anderson.anzileiro@gmail.com");
         firstContact.save();
     }
+
+
+
 }
